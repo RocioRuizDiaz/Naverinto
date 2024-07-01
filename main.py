@@ -4,7 +4,7 @@ directorio_raiz = os.path.abspath(os.path.dirname(__file__)) # Preguntarle al pr
 if directorio_raiz not in sys.path:
     sys.path.append(directorio_raiz)
 
-import cons, player
+import cons, clases.nave as nave
 
 # Inicializamos Pygame
 pygame.init()
@@ -13,7 +13,7 @@ screen = pygame.display.set_mode((cons.ANCHO_SCREEN, cons.ALTO_SCREEN)) # Determ
 pygame.display.set_caption('Naverinto') # set_caption() permite ponerle nombre al juego.
 
 # Instanciamos una nave y establecemos su posición inicial.
-nave = player.Spaceship(cons.ANCHO_SCREEN // 2, cons.ALTO_SCREEN - 300)
+nave = nave.Spaceship(cons.ANCHO_SCREEN // 2, cons.ALTO_SCREEN - 300)
 
 clock = pygame.time.Clock() # Creamos un objeto de la clase Clock. Esta clase proporciona métodos para controlar el tiempo y el framerate del juego.
 dt = 0 # Inicializamos la variable dt que servirá para controlar los tiempos de cada ciclo. Su unidad será el segundo.
